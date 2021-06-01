@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/bootstrap.scss";
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  position: relative;
+}
+
+.my-list-container {
+  .my-list-header {
+    display: flex;
+    justify-content: flex-end;
+    h2 {
+      width: 100%;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    app-search-input {
+      width: 450px;
+    }
+  }
+  .my-list-content {
+    margin-top: 29px;
+  }
+
+  .count-label {
+    font-size: 18px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,30 @@
+<div class="my-header">
+  <div class="header-navigate d-flex">
+    <div class="logo">
+      <span>M</span>
+    </div>
+    <div class="d-flex">
+      <ul class="my-header-links" *ngFor="let item of listItemsRouter">
+        <li routerLinkActive="active">
+          <a [routerLink]="item.url">
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="d-flex mt-4 justify-content-between">
+    <div class="d-flex">
+      <ul class="my-header-links" *ngFor="let item of listTabItems">
+        <li class="header-links-list" routerLinkActive="active">
+          <a [routerLink]="item.url">
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <span>102,934 Prints</span>
+    </div>
+  </div>
+</div>
