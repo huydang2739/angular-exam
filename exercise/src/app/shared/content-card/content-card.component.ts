@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Image } from 'src/app/types/model'
+import { Image } from 'src/app/shared/types/model'
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',

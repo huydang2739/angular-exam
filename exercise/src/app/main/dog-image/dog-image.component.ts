@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router'
 import { GetImageService } from 'src/app/api/get-image.service'
 import { ListContainer } from 'src/app/shared/list-container'
 
-import { Image } from 'src/app/types/model'
+import { Image } from 'src/app/shared/types/model'
 
 @Component({
   selector: 'app-dog-image',

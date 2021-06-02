@@ -4,17 +4,21 @@ import { DogImageComponent } from './dog-image/dog-image.component';
 import { CatImageComponent } from './cat-image/cat-image.component';
 import { MainRoutes } from './main.routing';
 import { SharedModule } from '../shared/shared.module';
+import { MainComponent } from './main.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion'
 
 
 @NgModule({
   imports: [
     CommonModule,
     MainRoutes,
-    SharedModule
+    SharedModule,
+    AccordionModule.forRoot(),
   ],
   declarations: [
     DogImageComponent,
-    CatImageComponent
+    CatImageComponent,
+    MainComponent
   ]
 })
 export class MainModule { }

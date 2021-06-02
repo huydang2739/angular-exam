@@ -4,7 +4,7 @@ import { Subject, Observable, merge } from 'rxjs'
 
 import { isUndefined, omitBy } from 'lodash-es'
 import { tap, switchMap, finalize, take } from 'rxjs/operators'
-import { QueryResult } from '../types/model'
+import { QueryResult } from './types/model'
 
 
 export abstract class ListContainer<T> implements OnInit {
@@ -75,6 +75,7 @@ export abstract class ListContainer<T> implements OnInit {
     }
 
     if (this.useRoute) {
+      console.log(this.useRoute)
       merge(this.refreshTrigger, this.route.params).pipe(
         tap(this.readRouteParams.bind(this)),
         switchMap(() => {

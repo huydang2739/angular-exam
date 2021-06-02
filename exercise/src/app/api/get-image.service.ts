@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { QueryResult, Image } from '../types/model';
+import { QueryResult, Image } from '../shared/types/model';
 
 @Injectable({
   providedIn: 'root'
