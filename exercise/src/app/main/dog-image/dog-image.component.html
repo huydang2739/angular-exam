@@ -1,24 +1,33 @@
-<div class="my-list-container">
-  <div class="my-list-header">
-    <app-search-input></app-search-input>
-  </div>
+<div class="container">
+  <div class="my-list-container">
+    <div class="my-list-header">
+      <app-search-input [search]="query" (changed)="onQueryChanged($event)">
+      </app-search-input>
+    </div>
 
-  <div class="row mt-3">
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <app-content-card></app-content-card>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <app-content-card></app-content-card>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <app-content-card></app-content-card>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <app-content-card></app-content-card>
-    </div>
-  </div>
+    <!-- <ng-container *ngIf="!items?.length && !query && !isLoading; else hasContent">
+      <no-results class="has-container" [message]="'You are not enrolled in any courses yet!' "
+        [description]="'Explore our training catalog to select the first course for yourself'"
+        [image]="'assets/images/icons/img-course.svg'">
+        <button type="button" class="btn btn-primary" routerLink="/discovery/courses">
+          {{ 'Discovery' }}
+        </button>
+      </no-results>
+    </ng-container> -->
 
-  <div class="d-flex justify-content-center mt-3">
-    <app-paginator></app-paginator>
+    <ng-template #hasContent>
+      <div class="my-list-content">
+        <!-- <no-results *ngIf="!items?.length && !isLoading" class="has-container" [description]="'Not Found' "
+          [image]="'assets/images/icons/img-course.svg'"></no-results> -->
+        <div class="row fade-in-up">
+          <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let item of items">
+            <app-content-card class="my-course-card" [content]="item"></app-content-card>
+          </div>
+        </div>
+        <div *ngIf="items?.length" class="d-flex justify-content-center">
+          <app-paginator [total]="total" [quantity]="quantity" [page]="page1" (changed)="onPageChanged($event)">
+          </app-paginator>
+        </div>
+      </div>
+    </ng-template>
   </div>
-</div>

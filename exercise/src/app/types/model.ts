@@ -3,7 +3,7 @@ export interface Image {
   imageName: string
   like: number
   avatarUrl: string
-  resolution: number
+  resolutiion: number
 }
 
 export interface QueryResult<T> {

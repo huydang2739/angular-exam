@@ -6,7 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./search-input.component.scss']
 })
 export class SearchInputComponent {
-  @Input() query: string = '';
+  @Input() search: string = '';
   @Input() placeholder: string = ''
   @Output() changed = new EventEmitter()
 
@@ -20,11 +20,11 @@ export class SearchInputComponent {
   }
 
   clear() {
-    this.query = ''
+    this.search = ''
     this.update()
   }
 
   private update() {
-    this.changed.emit(this.query)
+    this.changed.emit(this.search)
   }
 }

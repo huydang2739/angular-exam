@@ -18,7 +18,7 @@ export class GetImageService {
     }, new HttpParams())
   }
 
-  getAnimalImage(params: { skip: number, take: number, query: string }) {
+  getAnimalImage(params: { page: number, limit: number, search: string }) {
     return this.httpClient.get<QueryResult<Image>>(`${this.baseUrl}/dog`, { params: this.createParams(params) })
   }
 

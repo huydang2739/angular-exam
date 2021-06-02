@@ -8,13 +8,13 @@ import { QueryResult } from '../types/model'
 
 
 export abstract class ListContainer<T> implements OnInit {
-  isLoading: boolean = false
-  total: number = 0
-  page = 1
-  sort: string = ''
-  query: string = ''
+  isLoading: boolean
+  total: number
+  page1 = 1
+  sort: string
+  query: string
   params: { [key: string]: any } = {}
-  items: T[] = []
+  items: T[]
 
   get totalPages(): number {
     return Math.ceil(this.total / this.quantity)
@@ -67,12 +67,10 @@ export abstract class ListContainer<T> implements OnInit {
 
   protected subscribe() {
     const next = result => {
-      this.isLoading = false
       this.handleResult(result)
     }
 
     const error = reason => {
-      this.isLoading = false
       this.handleError(reason)
     }
 
@@ -80,7 +78,6 @@ export abstract class ListContainer<T> implements OnInit {
       merge(this.refreshTrigger, this.route.params).pipe(
         tap(this.readRouteParams.bind(this)),
         switchMap(() => {
-          this.isLoading = true
           return this.fetch().pipe(finalize(() => {
             if (this.cdr) {
               this.cdr.detectChanges()
@@ -91,7 +88,6 @@ export abstract class ListContainer<T> implements OnInit {
     } else {
       this.refreshTrigger.pipe(
         switchMap(() => {
-          this.isLoading = true
           return this.fetch().pipe(finalize(() => {
             if (this.cdr) {
               this.cdr.detectChanges()
@@ -104,7 +100,7 @@ export abstract class ListContainer<T> implements OnInit {
 
   protected readRouteParams(params: { [key: string]: any }) {
     const { page, quantity, sort, query } = params
-    this.page = +page || 1
+    this.page1 = +page || 1
     this.quantity = +quantity || this.quantity
     this.sort = sort
     this.query = query
@@ -131,7 +127,7 @@ export abstract class ListContainer<T> implements OnInit {
   }
 
   protected mergeParams(params: Params) {
-    this.page = params.page || 1
+    this.page1 = params.page || 1
     this.quantity = params.quantity || this.quantity
     this.params = Object.assign({}, this.params, params)
   }

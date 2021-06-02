@@ -1,22 +1,21 @@
 <div class="image-card">
-  <div class="card-thumbnail d-flex justify-content-end"
-    [style.background-image]="'url(http://placeimg.com/640/480/animals)'">
+  <div class="card-thumbnail d-flex justify-content-end" [style.background-image]="content?.imageUrl">
     <div class="like-number">
       <i class="far fa-heart"></i>
-      <span>128</span>
+      <span>{{ content?.like }}</span>
     </div>
   </div>
   <div class="card-infor">
     <div class="image-infor">
       <p class="image-name">
-        Sheared Falls
+        {{ content?.imageName }}
       </p>
       <p class="image-size">
-        20" * 24"
+        {{ content?.resolutiion }}
       </p>
     </div>
     <div class="user-avatar">
-      <img src="https://cdn.fakercloud.com/avatars/danmartin70_128.jpg" alt="">
+      <img [src]="content?.avatarUrl" alt="">
     </div>
   </div>
 </div>

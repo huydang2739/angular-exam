@@ -10,8 +10,7 @@ import { Image } from 'src/app/types/model'
   templateUrl: './dog-image.component.html',
   styleUrls: ['./dog-image.component.scss']
 })
-export class DogImageComponent extends ListContainer<Image>  {
-
+export class DogImageComponent extends ListContainer<Image> implements OnInit {
   constructor(
     route: ActivatedRoute,
     router: Router,
@@ -20,12 +19,15 @@ export class DogImageComponent extends ListContainer<Image>  {
     super(route, router, 8)
   }
 
+  ngOnInit() { }
+
+
   protected fetch() {
-    const { page, quantity } = this
-    const skip = (page - 1) * quantity
-    const take = quantity
-    const query = this.query
-    return this.getImageService.getAnimalImage({ skip, take, query })
+    const { page1, quantity } = this
+    const page = page1
+    const limit = quantity
+    const search = this.query
+    return this.getImageService.getAnimalImage({ page, limit, search })
   }
 
   protected handleError(reason: any) {
