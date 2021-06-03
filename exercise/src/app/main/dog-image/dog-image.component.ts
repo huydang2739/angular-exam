@@ -19,9 +19,6 @@ export class DogImageComponent extends ListContainer<Image> implements OnInit {
     super(route, router, 8)
   }
 
-  ngOnInit() { }
-
-
   protected fetch() {
     const { page1, quantity } = this
     const page = page1

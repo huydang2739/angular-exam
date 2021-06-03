@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { QueryResult, Image } from '../shared/types/model';
+import { Image } from '../shared/types/model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,7 @@ export class GetImageService {
   }
 
   getAnimalImage(params: { page: number, limit: number, search: string }) {
-    return this.httpClient.get<QueryResult<Image>>(`${this.baseUrl}/dog`, { params: this.createParams(params) })
+    return this.httpClient.get<Image>(`${this.baseUrl}/dog`, { params: this.createParams(params) })
   }
 
 }

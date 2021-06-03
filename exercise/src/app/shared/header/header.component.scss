@@ -24,6 +24,11 @@
       }
     }
   }
+  .total-pictures {
+    padding-right: 1.6rem;
+    color: #bfbfbf;
+    font-weight: 600;
+  }
   li {
     margin-right: 2rem;
     a {
@@ -41,6 +46,7 @@
         bottom: 0;
         left: 0;
         right: 0;
+        margin-top: 1rem;
         border-bottom: solid 3px transparent;
       }
     }
@@ -57,9 +63,13 @@
       list-style: none;
       margin-right: 3rem;
       height: 100%;
+      span {
+        margin-bottom: 1rem;
+      }
       &.active {
         a {
           color: #737272;
+
           &:after {
             border-bottom-color: #737272;
           }

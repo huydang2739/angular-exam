@@ -6,6 +6,8 @@ import { MainRoutes } from './main.routing';
 import { SharedModule } from '../shared/shared.module';
 import { MainComponent } from './main.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion'
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { AccordionModule } from 'ngx-bootstrap/accordion'
     MainRoutes,
     SharedModule,
     AccordionModule.forRoot(),
+    RouterModule,
+    FormsModule
   ],
   declarations: [
     DogImageComponent,

@@ -6,7 +6,4 @@ export interface Image {
   resolutiion: number
 }
 
-export interface QueryResult<T> {
-  count: number
-  items: Array<T>
-}
+

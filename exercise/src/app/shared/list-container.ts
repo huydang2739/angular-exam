@@ -4,7 +4,7 @@ import { Subject, Observable, merge } from 'rxjs'
 
 import { isUndefined, omitBy } from 'lodash-es'
 import { tap, switchMap, finalize, take } from 'rxjs/operators'
-import { QueryResult } from './types/model'
+
 
 
 export abstract class ListContainer<T> implements OnInit {
@@ -59,7 +59,7 @@ export abstract class ListContainer<T> implements OnInit {
     this.refreshTrigger.next(this.route.snapshot.params)
   }
 
-  protected abstract fetch(): Observable<QueryResult<T>>
+  protected abstract fetch(): Observable<T>
 
   protected getSort() {
     return this.sort
@@ -133,9 +133,9 @@ export abstract class ListContainer<T> implements OnInit {
     this.params = Object.assign({}, this.params, params)
   }
 
-  protected handleResult(result: QueryResult<T>) {
-    this.total = result.count
-    this.items = result.items
+  protected handleResult(result) {
+    this.items = result
+    console.log(this.items)
   }
 
   protected abstract handleError(reason: any)

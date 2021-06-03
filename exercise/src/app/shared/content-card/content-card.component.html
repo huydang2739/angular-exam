@@ -1,5 +1,5 @@
 <div class="image-card">
-  <div class="card-thumbnail d-flex justify-content-end" [style.background-image]="content?.imageUrl">
+  <div class="card-thumbnail d-flex justify-content-end" [style.background-image]="'url('+(content?.imageUrl)+')'">
     <div class="like-number">
       <i class="far fa-heart"></i>
       <span>{{ content?.like }}</span>

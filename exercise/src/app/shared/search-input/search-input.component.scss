@@ -1,44 +1,24 @@
-.form-control-search {
-  position: relative;
-  padding: 0.3rem;
-  border: 1px solid white;
-  background: #fff;
-  border-radius: 5px;
-  .form-control-filter {
-    background: #f6f7f9;
-    transition: all 250ms ease-in-out;
-    border: solid 1px #e6e7ea;
-  }
-  .form-control {
-    display: block;
-    width: 100%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ebebeb;
-    border-radius: 0.25rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  .fa-search {
-    position: absolute;
-    top: 15px;
-    left: 16px;
-    color: gray;
-  }
-  input {
-    padding-left: 45px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .icon-clear {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    cursor: pointer;
+.wrapper {
+  padding: 0.2rem;
+  background-color: #fff;
+  .form-control-search {
+    position: relative;
+    .fa-search {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      color: gray;
+    }
+    input {
+      padding-left: 45px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .icon-clear {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      cursor: pointer;
+    }
   }
 }
