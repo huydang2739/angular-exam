@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
-import { CatImageComponent } from './cat-image/cat-image.component';
-import { DogImageComponent } from './dog-image/dog-image.component';
+import { AnimalsImageComponent } from './animals-image/animals-image.component';
 import { MainComponent } from './main.component';
+import { FoodsImageComponent } from './foods-image/foods-image.component';
 
 const routes: Routes = [
   {
@@ -10,15 +10,15 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'cat'
+        redirectTo: 'foods'
       },
       {
-        path: 'cat',
-        component: CatImageComponent
+        path: 'foods',
+        component: FoodsImageComponent
       },
       {
-        path: 'dog',
-        component: DogImageComponent
+        path: 'animals',
+        component: AnimalsImageComponent
       }
     ]
   }

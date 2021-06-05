@@ -9,6 +9,9 @@ import { RouterModule } from '@angular/router'
 import { FormsModule } from '@angular/forms'
 import { HeaderComponent } from './header/header.component'
 import { NoResultsComponent } from './no-results/no-results.component'
+import { LoaderComponent } from './loader/loader.component'
+import { ContentLoaderModule } from '@ngneat/content-loader'
+import { PageMetadataModule } from './page-metadata/page-metadata.module'
 
 @NgModule({
   imports: [
@@ -16,6 +19,8 @@ import { NoResultsComponent } from './no-results/no-results.component'
     RouterModule,
     FormsModule,
     FormsModule,
+    ContentLoaderModule,
+    PageMetadataModule,
   ],
   declarations: [
     ContentCardComponent,
@@ -23,13 +28,16 @@ import { NoResultsComponent } from './no-results/no-results.component'
     NoResultsComponent,
     PaginatorComponent,
     SearchInputComponent,
+    LoaderComponent
   ],
   exports: [
     ContentCardComponent,
     HeaderComponent,
     NoResultsComponent,
     PaginatorComponent,
-    SearchInputComponent
+    SearchInputComponent,
+    LoaderComponent,
+    PageMetadataModule,
   ]
 })
 export class SharedModule { }

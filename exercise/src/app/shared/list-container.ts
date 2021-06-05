@@ -67,10 +67,12 @@ export abstract class ListContainer<T> implements OnInit {
 
   protected subscribe() {
     const next = result => {
+      this.isLoading = false
       this.handleResult(result)
     }
 
     const error = reason => {
+      this.isLoading = false
       this.handleError(reason)
     }
 
@@ -79,6 +81,7 @@ export abstract class ListContainer<T> implements OnInit {
       merge(this.refreshTrigger, this.route.params).pipe(
         tap(this.readRouteParams.bind(this)),
         switchMap(() => {
+          this.isLoading = true
           return this.fetch().pipe(finalize(() => {
             if (this.cdr) {
               this.cdr.detectChanges()
@@ -89,6 +92,7 @@ export abstract class ListContainer<T> implements OnInit {
     } else {
       this.refreshTrigger.pipe(
         switchMap(() => {
+          this.isLoading = true
           return this.fetch().pipe(finalize(() => {
             if (this.cdr) {
               this.cdr.detectChanges()

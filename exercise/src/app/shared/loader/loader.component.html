@@ -1,0 +1,23 @@
+<ng-content></ng-content>
+<div class="content-loader-container fade-in" *ngIf="loading">
+  <content-loader [height]="height" [primaryColor]="primaryColor" [secondaryColor]="secondaryColor" [speed]="speed">
+    <ng-container *ngFor='let item of [].constructor(row); index as iRow'>
+      <ng-container *ngFor='let item2 of [].constructor(column); index as iColumn'>
+        <svg:rect [attr.x]="pX(0,iColumn)" [attr.y]="pY(3,iRow)" rx="5" ry="5" [attr.width]="sW(90)" height="67" />
+        <svg:rect [attr.x]="pX(0,iColumn)" [attr.y]="pY(76,iRow)" rx="3" ry="3" [attr.width]="sW(90)" height="6" />
+        <svg:rect [attr.x]="pX(0,iColumn)" [attr.y]="pY(86,iRow)" rx="3" ry="3" [attr.width]="sW(80)" height="6" />
+        <svg:rect [attr.x]="pX(0,iColumn)" [attr.y]="pY(98,iRow)" rx="2" ry="2" [attr.width]="sW(50)" height="4" />
+        <svg:rect [attr.x]="pX(0,iColumn)" [attr.y]="pY(108,iRow)" rx="2" ry="2" [attr.width]="sW(60)" height="4" />
+      </ng-container>
+    </ng-container>
+  </content-loader>
+</div>
+<div class="content-loader-ie" [style.height.px]="height" *ngIf="loading">
+  <div class="waves">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>

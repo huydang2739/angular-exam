@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="my-list-container">
+    <div class="my-list-header mt-2">
+      <app-search-input [search]="query" (changed)="onQueryChanged($event)" [placeholder]="'Search prints...'">
+      </app-search-input>
+    </div>
+    <div class="my-list-content">
+      <div *ngIf="isLoading" class="loading-content">
+        <div [loader]="true" speed="0.8" type="course-card" height="240" [row]="2" [column]="4"></div>
+      </div>
+
+      <no-results *ngIf="!items?.length && !isLoading" class="has-container" [description]="'Not Found' "
+        [image]="'../../../assets/icons/img-course.svg'"></no-results>
+      <div class="row fade-in-up">
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let item of items">
+          <app-content-card class="my-course-card" [content]="item"></app-content-card>
+        </div>
+      </div>
+      <div *ngIf="items?.length" class="d-flex justify-content-center">
+        <app-paginator class="mt-4" [total]="24" [quantity]="quantity" [page]="page1" (changed)="onPageChanged($event)">
+        </app-paginator>
+      </div>
+    </div>
+
+  </div>

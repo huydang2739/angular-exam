@@ -20,11 +20,11 @@ export const Items = [
 export const TabItems = [
   {
     label: 'Animals',
-    url: '/dog'
+    url: '/animals'
   },
   {
-    label: 'Food',
-    url: '/cat'
+    label: 'Foods',
+    url: '/foods'
   }
 
 ]

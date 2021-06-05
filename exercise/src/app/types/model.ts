@@ -3,7 +3,7 @@ export interface Image {
   imageName: string
   like: number
   avatarUrl: string
-  resolutiion: number
+  resolution: number
 }
 
 
