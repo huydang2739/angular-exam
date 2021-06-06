@@ -1,9 +1,7 @@
 <div class="wrapper">
   <div class="form-control-search" [class.has-query]="search?.length">
     <i class="far fa-search"></i>
-    <input type="search" class="form-control form-control-filter" spellcheck="false" (keyup)="onKeyUp($event)"
-      [placeholder]="placeholder" [(ngModel)]="search">
-    <i [hidden]="search === '' || !search" class="icon-clear fal fa-times" (click)="clear()">
-    </i>
+    <input type="search" class="form-control form-control-filter" spellcheck="false" [placeholder]="placeholder"
+      [formControl]="inputFormControl" [value]="inputFormControl.value">
   </div>
 </div>

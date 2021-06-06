@@ -6,21 +6,20 @@ import { ContentCardComponent } from './content-card/content-card.component'
 import { PaginatorComponent } from './paginator/paginator.component'
 import { SearchInputComponent } from './search-input/search-input.component'
 import { RouterModule } from '@angular/router'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HeaderComponent } from './header/header.component'
 import { NoResultsComponent } from './no-results/no-results.component'
 import { LoaderComponent } from './loader/loader.component'
 import { ContentLoaderModule } from '@ngneat/content-loader'
-import { PageMetadataModule } from './page-metadata/page-metadata.module'
+
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-    FormsModule,
     ContentLoaderModule,
-    PageMetadataModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ContentCardComponent,
@@ -28,7 +27,7 @@ import { PageMetadataModule } from './page-metadata/page-metadata.module'
     NoResultsComponent,
     PaginatorComponent,
     SearchInputComponent,
-    LoaderComponent
+    LoaderComponent,
   ],
   exports: [
     ContentCardComponent,
@@ -37,7 +36,6 @@ import { PageMetadataModule } from './page-metadata/page-metadata.module'
     PaginatorComponent,
     SearchInputComponent,
     LoaderComponent,
-    PageMetadataModule,
   ]
 })
 export class SharedModule { }

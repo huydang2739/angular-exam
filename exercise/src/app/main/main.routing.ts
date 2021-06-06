@@ -10,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'foods'
+        redirectTo: 'animals'
       },
       {
         path: 'foods',

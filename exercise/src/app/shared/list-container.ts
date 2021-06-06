@@ -47,22 +47,24 @@ export abstract class ListContainer<T> implements OnInit {
     this.navigate({ ...this.currentParams, page: 1, quantity: quantity })
   }
 
-  onQueryChanged(query: string) {
-    this.navigate({ ...this.currentParams, page: 1, query: query })
-  }
-
-  onSorted(sort: string) {
-    this.navigate({ ...this.currentParams, page: 1, sort: sort })
-  }
-
   refresh() {
     this.refreshTrigger.next(this.route.snapshot.params)
   }
 
   protected abstract fetch(): Observable<T>
 
+  public queryParam(value: { inputValue: string; key: string }) {
+    this.query = value.inputValue;
+    this.navigate({ ...this.currentParams, page: 1, query: this.query })
+    this.subscribe()
+  }
+
   protected getSort() {
     return this.sort
+  }
+
+  protected getQuery() {
+    return this.query
   }
 
   protected subscribe() {

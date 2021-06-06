@@ -1,7 +1,7 @@
 <div class="container">
   <div class="my-list-container">
     <div class="my-list-header mt-2">
-      <app-search-input [search]="query" (changed)="onQueryChanged($event)" [placeholder]="'Search prints...'">
+      <app-search-input [search]="query" (getInputValue)="queryParam($event)" [placeholder]="'Search prints...'">
       </app-search-input>
     </div>
     <div class="my-list-content">
