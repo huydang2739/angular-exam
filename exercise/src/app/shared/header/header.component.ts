@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Items, TabItems } from './Router';
+import { MenuItems, TabItems } from './Router';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,7 @@ import { Items, TabItems } from './Router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  listItemsRouter = Items
+  listMenuItems = MenuItems
   listTabItems = TabItems
   constructor() { }
 

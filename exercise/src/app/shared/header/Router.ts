@@ -1,4 +1,4 @@
-export const Items = [
+export const MenuItems = [
   {
     label: 'Discover',
     url: ''
